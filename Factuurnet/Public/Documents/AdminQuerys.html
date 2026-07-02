@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Query</title>
+  <link rel="stylesheet" href="./css/query.css">
+  <link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+
+   <header>
+    <div href="/" class="logo">Factuurnet</div>
+    <nav>
+      <a href="/products">Product Beheer</a>
+      <a href="/dashboard"> Alle debiteuren </a>
+      <a href="/invoiceselect">Home</a>
+      <a href="/settings">instellingen</a>
+    </nav>
+  </header>
+
+  <section class="container">
+    <div class="query-box">
+      <h1>Voer een Database Query uit</h1>
+
+      <!-- Query Input -->
+      <div class="input-section">
+        <label for="queryInput"><strong>Voer SQL-query in:</strong></label>
+        <input type="text" id="queryInput" placeholder="bijv. SELECT * FROM debiteuren;">
+      </div>
+
+      <!-- Encryption & Run Button -->
+      <div class="options">
+        <div class="encrypt-toggle">
+          <input type="checkbox" id="encryptToggle">
+          <label for="encryptToggle"><strong>Versleuteling uit?</strong></label>
+        </div>
+        <button id="runQueryBtn">Voer Query uit</button>
+      </div>
+
+      <!-- Query Response -->
+      <div class="response-section">
+        <h2>Response</h2>
+        <div id="queryResponse">
+          OK — 2 rijen beïnvloed.
+        </div>
+      </div>
+
+      <!-- Query Results Table -->
+      <h2>Query Resultaten</h2>
+      <div class="table-wrapper">
+        <table class="invoice-table" id="queryResults">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Naam</th>
+              <th>Email</th>
+              <th>Aangemaakt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>18</td>
+              <td>Alice Smith</td>
+              <td>alice@example.com</td>
+              <td>2025-11-12</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="total-section">
+        <p><em>2 resultaten weergegeven.</em></p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    &copy; Factuurnet
+  </footer>
+
+</body>
+</html>
+<script src="./JS/adminquerys.js"></script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inloggen</title>
+    <link rel="stylesheet" href="./css/notification.css" />
+  <link rel="stylesheet" href="./css/footer.css">
+
+  <link rel="stylesheet" href="./css/invoicing.css"> <!-- bestaande CSS -->
+</head>
+<body>
+   <header>
+    <div href="/" class="logo">Factuurnet</div>
+    <nav>
+      <a href="/products">Product Beheer</a>
+      <a href="/dashboard"> Alle debiteuren </a>
+      <a href="/invoiceselect">Home</a>
+      <a href="/settings">instellingen</a>
+    </nav>
+  </header>
+  <div class="invoice-container">
+    <div class="invoice">
+      <h1>Inloggen</h1>
+
+      <form id="loginForm">
+        <div class="invoice-details">
+          <div style="width:100%;">
+            <label for="username">Gebruikersnaam</label><br>
+            <input type="text" id="username" name="username" placeholder="Voer uw gebruikersnaam in" style="width:100%;padding:0.5rem;margin-top:0.3rem;margin-bottom:1rem;border:1px solid #ddd;border-radius:5px;">
+            
+            <label for="password">Wachtwoord</label><br>
+            <input type="password" id="password" name="password" placeholder="Voer uw wachtwoord in" style="width:100%;padding:0.5rem;margin-top:0.3rem;margin-bottom:1rem;border:1px solid #ddd;border-radius:5px;">
+          </div>
+        </div>
+
+        <div style="text-align:center;">
+          <button id="submit" type="submit" class="download-btn">Inloggen</button>
+        </div>
+      </form>
+
+      <p style="text-align:center;margin-top:1rem;">Heeft u nog geen account? <a href="/makeuser">Registreer hier</a></p>
+
+    </div>
+  </div>
+<div id="notification-container"></div>
+
+  <footer>
+    &copy; 2025 Debiteurenbeheer. Alle rechten voorbehouden.
+  </footer>
+  <script src="./JS/notification.js"></script>
+
+  <script src="./JS/login.js"></script> <!-- JS-bestand voor login -->
+</body>
+</html>

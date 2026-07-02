@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Factuur | computerdoc</title>
+  <link rel="stylesheet" href="./css/invoicepage.css" />
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/notification.css" />
+
+</head>
+<body>
+   <header>
+    <div href="/" class="logo">Factuurnet</div>
+    <nav>
+      <a href="/products">Product Beheer</a>
+      <a href="/dashboard"> Alle debiteuren </a>
+      <a href="/invoiceselect">Home</a>
+      <a href="/settings">instellingen</a>
+    </nav>
+  </header>
+  <main>
+    <section class="invoice-container">
+      <div class="invoice">
+        <h1>Factuur #1024</h1>
+        <div class="invoice-details">
+          <div>
+            <h3>Gefactureerd aan:</h3>
+            <p>John Doe</p>
+            <p>123 Example Street</p>
+            <p>New York, NY 10001</p>
+          </div>
+          <div>
+            <h3>Factuurgegevens:</h3>
+            <p><strong>Datum:</strong> 7 nov 2025</p>
+            <p><strong>Vervaldatum:</strong> 14 nov 2025</p>
+          </div>
+        </div>
+ 
+        <table class="invoice-table">
+          <thead>
+            <tr>
+  <th>Product ID</th>
+  <th>Factuur nummber</th>
+  <th>abonnoment ID</th>
+  <th>Naam</th>
+  <th>Prijs</th>
+  <th>Aantal</th>
+  <th>BTW %</th>
+</tr>
+
+          </thead>
+          <tbody>
+            <tr>
+              <td>Website Ontwerp</td>
+              <td>1</td>
+              <td>$500.00</td>
+              <td>$500.00</td>
+            </tr>
+            <tr>
+              <td>Hosting (3 maanden)</td>
+              <td>3</td>
+              <td>$20.00</td>
+              <td>$60.00</td>
+            </tr>
+            <tr>
+              <td>Domeinregistratie</td>
+              <td>1</td>
+              <td>$15.00</td>
+              <td>$15.00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="total-section">
+          <p><strong>Subtotaal:</strong> $575.00</p>
+          <p><strong>BTW (10%):</strong> $57.50</p>
+          <p class="grand-total"><strong>Totaal te betalen:</strong> $632.50</p>
+        </div>
+
+        <button class="download-btn" id="download">Download PDF</button>
+        <button class="download-btn" id="verstuur">Verstuur</button>
+        <button class="download-btn" id="update">Factuur updaten</button>
+               <label for="status">Status:</label>
+      <select id="status">
+        <option value="Afwachting">In afwachting</option>
+        <option value="Betaald">Betaald</option>
+        <option value="Laat">Te laat</option>
+      </select>
+
+
+      </div>
+    </section>
+  </main>
+<div id="notification-container"></div>
+
+  <footer>
+    <p>© 2025 Factuurnet. Alle rechten voorbehouden.</p>
+  </footer>
+</body>
+</html>
+<script src="./JS/Invoicedata.js"></script>
+  <script src="./JS/notification.js"></script>
+

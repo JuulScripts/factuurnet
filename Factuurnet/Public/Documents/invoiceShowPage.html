@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Facturen Overzicht</title>
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/InvoiceShow.css" />
+  <link rel="stylesheet" href="./css/notification.css" />
+
+</head>
+<body>
+   <header>
+    <div href="/" class="logo">Factuurnet</div>
+    <nav>
+      <a href="/products">Product Beheer</a>
+      <a href="/dashboard"> Alle debiteuren </a>
+      <a href="/invoiceselect">Home</a>
+      <a href="/settings">instellingen</a>
+    </nav>
+  </header>
+<main class="main-container">
+  <div class="invoice-header">
+    <h1>Facturen Overzicht</h1>
+
+    <!-- Dropdown filter button -->
+    <div class="dropdown">
+      <button class="filter-btn" >Filter ▾</button>
+      <div class="dropdown-content">
+        <button class="filter-option" data-filter="Alles">Alles</button>
+        <button class="filter-option" data-filter="Afwachting">Openstaand</button>
+        <button class="filter-option" data-filter="Betaald">Betaald</button>
+        <button class="filter-option" data-filter="Laat">Te laat</button>
+        <button class="filter-option" data-filter="Verzonden">Verzonden</button>
+        <button class="filter-option" data-filter="Concept">Concept</button>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="invoice-table-container">
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <th>Factuur ID</th>
+          <th>Klant</th>
+          <th>Adres</th>
+          <th>Factuur Datum</th>
+          <th>Vervaldatum</th>
+          <th>Status</th>
+          <th>Subtotaal</th>
+          <th>Totaal</th>
+          <th>Gemaakt op</th>
+          <th>Actie</th>
+          <th>Verwijder</th>
+          <th>Verzonden</th>
+        </tr>
+      </thead>
+      
+      <tbody id="invoice-list">
+        <!-- Dynamic rows inserted here -->
+      </tbody>
+    </table>
+    
+  </div>
+  
+  <div class="table-navigation">
+  <button class="arrow-btn" id="scrollLeft">&#8592;</button>
+  <p id="currentPage">1</p>
+  <button class="arrow-btn" id="scrollRight">&#8594;</button>
+</div>
+  
+</main>
+<div id="notification-container"></div>
+
+<footer>
+  © 2025 Factuurnet
+</footer>
+
+<script src="./JS/invoiceShow.js"></script>
+<script src="./JS/notification.js"></script>
+
+</body>
+</html>

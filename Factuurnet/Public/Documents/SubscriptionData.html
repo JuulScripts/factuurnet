@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abonnement | Factuurnet</title>
+  <link rel="stylesheet" href="./css/subscription.css" />
+  <link rel="stylesheet" href="./css/notification.css" />
+  <link rel="stylesheet" href="./css/footer.css">
+
+</head>
+<body>
+
+<header>
+  <div class="logo">Factuurnet</div>
+  <nav>
+    <a href="/products">Producten</a>
+    <a href="/dashboard">Debiteuren</a>
+    <a href="/subscriptions" class="active">Abonnementen</a>
+    <a href="/settings">Instellingen</a>
+  </nav>
+</header>
+
+<main>
+  <section class="subscription-container">
+
+    <!-- SUBSCRIPTION HEADER -->
+    <div class="subscription-header">
+      <div>
+        <h1>Website Onderhoud</h1>
+        <p class="muted">
+          Abonnement ID: <strong>2048</strong> • Gebruiker ID: <strong>15</strong>
+        </p>
+      </div>
+
+      </div>
+    </div>
+
+    <!-- CORE DETAILS -->
+    <div class="subscription-grid">
+
+      <div class="card">
+        <h3>Facturatie</h3>
+        <p><strong>Prijs:</strong> €25,00</p>
+        <p><strong>Periodes:</strong> 12</p>
+        <p><strong>Type:</strong> Maandelijks</p>
+        <p><strong>Startdatum:</strong> 2025-01-01</p>
+        <p><strong>Einddatum:</strong> 2025-12-31</p>
+      </div>
+
+      <a href="/dashboard?user=15" class="card card-link">
+        <h3>Klantgegevens</h3>
+        <p class="muted">
+          Bekijk debiteur en factuurgegevens
+        </p>
+        <span class="link-arrow">→</span>
+      </a>
+
+    </div>
+
+    <!-- PRODUCT ROWS (MOVED TO MIDDLE) -->
+    <div class="card product-overview">
+      <h3>Productregels</h3>
+
+      <table class="product-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Invoice ID</th>
+            <th>Subscription ID</th>
+            <th>Naam</th>
+            <th>Prijs</th>
+            <th>Aantal</th>
+            <th>BTW %</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody">
+          <!-- JS will populate rows here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FINANCIAL SUMMARY -->
+    <div class="card financial-summary">
+      <h3>Financieel overzicht</h3>
+
+    
+      </div>
+    </div>
+
+    <!-- INVOICING ACTIONS -->
+    <div class="card invoice-actions">
+      <h3>Facturatie</h3>
+
+     
+
+      <button id="verstuur" class="primary-btn">
+        Nieuwe concept factuur genereren
+      </button>
+        <button id="update" class="primary-btn">
+        update factuur
+      </button>
+        Ik wil dat dit abonoment automatisch naar de debiteur word geEmailed   <input type="checkbox" id="setAutoSend">
+    </div>
+
+  </section>
+</main>
+<div id="notification-container"></div>
+
+<footer>
+  <p>© 2025 Factuurnet. Alle rechten voorbehouden.</p>
+</footer>
+
+<script src="./JS/subscriptionData.js"></script>
+<script src="./JS/notification.js"></script>
+
+</body>
+</html>

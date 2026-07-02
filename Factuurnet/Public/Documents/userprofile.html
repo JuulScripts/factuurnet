@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Factuurnet</title>
+
+  <!-- SINGLE COMBINED CSS -->
+  <link rel="stylesheet" href="./css/userprofilePart.css">
+  <link rel="stylesheet" href="./css/notification.css" />
+  <link rel="stylesheet" href="./css/userprofile.css">
+  <link rel="stylesheet" href="./css/footer.css">
+
+</head>
+
+<body>
+
+   <header>
+    <div href="/" class="logo">Factuurnet</div>
+    <nav>
+      <a href="/products">Product Beheer</a>
+      <a href="/dashboard"> Alle debiteuren </a>
+      <a href="/invoiceselect">Home</a>
+      <a href="/settings">instellingen</a>
+    </nav>
+  </header>
+
+  <!-- ========================= -->
+  <!--      GEBRUIKERS PROFIEL   -->
+  <!-- ========================= -->
+  <main id="profileSection">
+    <h2 class="page-title" id="Naam">Debietur</h2>
+
+   <main id="profileSection">
+  <section class="profile-page">
+
+    <h1 class="profile-title">Debiteur:</h1>
+
+    <form id="profileForm" class="profile-card profile-form-compact">
+
+      <!-- ROW 1 -->
+      <div class="form-row">
+        <div class="field">
+          <label>Klantnummer</label>
+          <input type="text" id="customer_id" readonly class="readonly-input">
+        </div>
+
+        <div class="field">
+          <label>Naam</label>
+          <input type="text" id="name">
+        </div>
+  <div class="field">
+          <label>Achternaam</label>
+          <input type="text" id="lastname">
+        </div>
+        <div class="field">
+          <label>Bedrijfsnaam</label>
+          <input type="text" id="company_name">
+        </div>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="form-row">
+        <div class="field">
+          <label>Contactpersoon</label>
+          <input type="text" id="contact_person">
+        </div>
+
+        <div class="field">
+          <label>E-mail</label>
+          <input type="email" id="email">
+        </div>
+
+        <div class="field">
+          <label>Website</label>
+          <input type="text" id="website">
+        </div>
+      </div>
+
+      <!-- ROW 3 (CONTACT NUMBERS – STUCK TOGETHER) -->
+      <div class="form-row tight">
+        <div class="field">
+          <label>Telefoon</label>
+          <input type="text" id="phonenumber">
+        </div>
+
+        <div class="field">
+          <label>Mobiel</label>
+          <input type="text" id="mobile_number">
+        </div>
+
+        <div class="field">
+          <label>Fax</label>
+          <input type="text" id="fax_number">
+        </div>
+      </div>
+
+      <!-- ROW 4 (LOCATION – FEELS LIKE ONE FIELD) -->
+      <div class="form-row tight">
+        <div class="field wide">
+          <label>Adres</label>
+          <input type="text" id="address">
+        </div>
+
+        <div class="field">
+          <label>Postcode </label>
+          <input type="text" id="postal_code_city">
+        </div>
+
+
+        
+        <div class="field">
+          <label> Stad </label>
+          <input type="text" id="city">
+        </div>
+
+        <div class="field">
+          <label>Land</label>
+          <input type="text" id="country">
+        </div>
+      </div>
+
+      <!-- ROW 5 (BUSINESS IDS) -->
+      <div class="form-row">
+        <div class="field">
+          <label>KvK-nummer</label>
+          <input type="text" id="chamber_of_commerce_number">
+        </div>
+
+        <div class="field">
+          <label>BTW-nummer</label>
+          <input type="text" id="vat_number">
+        </div>
+
+        <div class="field">
+          <label>Peppol-ID</label>
+          <input type="text" id="peppol_id">
+        </div>
+      </div>
+
+      <!-- ROW 6 -->
+     
+
+      <!-- ROW 7 -->
+      <div class="form-row">
+        <div class="field full">
+          <label>Notities</label>
+          <textarea id="notes" class="notes-field"
+            placeholder="Schrijf hier jouw notities..."></textarea>
+        </div>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="form-actions">
+        <button class="save-btn" id="save-btn-changes" type="submit">
+          Wijzigingen Opslaan
+        </button>
+      </div>
+
+    </form>
+  </section>
+</main>
+
+
+  <main id="invoiceSection">
+<div class="modal-wrapper" style="display: none;">
+  <div class="modal-box">
+    <span id="closeInvoiceModal" class="modal-close">&times;</span>
+
+    <h2>Nieuwe Factuur Toevoegen</h2>
+
+    <form id="invoiceCreateForm">
+
+      <!-- =========================
+           RESTRICTION LEVEL
+     
+
+      <!-- =========================
+           CUSTOM PRODUCT TOGGLE & SELECT
+      ========================= -->
+      <div class="form-row toggle-container">
+        <label for="togglePrices">Wilt u een aangepast product maken?</label>
+        <input type="checkbox" id="togglePrices">
+      </div>
+
+      <div class="product-selection">
+        <div class="form-row" id="standard-product" style="display: block;"> 
+        <div class="Double-Wrapper dataFields" id="double-fields" >
+          <div class="dropdown-wrapper">
+          <label for="productSelect">Product selecteren</label>
+
+<label for="productSelect">Selecteer een product</label>
+<select id="name" class="dropdown-select">
+  <option value="" disabled selected>Selecteer een product</option>
+  <option value="product1">Product 1</option>
+  <option value="product2">Product 2</option>
+  <option value="product3">Product 3</option>
+</select>
+
+              <label for="amount">Aantal</label>
+            <input type="number" step="1" id="amount">
+              <button type="button" class="close-btn">× Verwijderen</button>
+                 <label for="toggle-subscription">abonnement maken</label>
+                 <input type="checkbox" id="isSubscription">
+                 <div class="id-wrapper">
+        <label class="subscription-field" for="endDate" style="display: block;">Eind datum</label>
+<input class="subscription-field" type="date" id="endDate" style="display: block;">
+<select class="subscription-field dropdown-select" id="dropdown-termein" style="display: block;">
+<option value="" disabled selected>Termein</option>
+<option value="wekelijks">Wekelijks</option>
+<option value="maandelijks">Maandelijks</option>
+<option value="kwartaal">Per kwartaal</option>
+<option value="halfjaarlijks">Halfjaarlijks</option>
+<option value="jaarlijks">Jaarlijks</option>
+</select>
+</div>
+            </div>
+       
+              
+          </div>
+        </div>
+
+        <div class="product-fields product-block dataFields" id="product-field" style="display: none;">
+       
+          <div class="form-row">
+           <label for="amount">Aantal</label>
+            <input type="number" step="1" id="amount">
+          </div>
+          <div class="form-row">
+            <label for="vat_percentage">BTW percentage</label>
+            <select id="vat_percentage">
+              <option value="21" selected>21%</option>
+              <option value="9">9%</option>
+              <option value="0">0%</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="price_excl_vat">Prijs</label>
+            <input type="number" step="0.01" id="price_excl_vat"  >
+          </div>
+          <div class="form-row">
+            <label for="name">Naam</label>
+            <input type="text" id="name"  >
+            
+          </div>
+              <button type="button" class="close-btn">× Verwijderen</button>
+
+        </div>
+
+      
+      </div>
+  <div class="form-row">
+          <button type="button" id="addProductBtn" class="add-product-btn">+ Product toevoegen</button>
+          <button type="button" id="addCustomProductBtn" class="add-product-btn">+ Aangepast product toevoegen</button>
+        </div>
+      <!-- =========================
+           SUCCESS & SUBMIT
+      ========================= -->
+      <div class="form-row">
+        <label id="success">Succes:</label>
+      </div>
+
+      <div class="form-row">
+        <button id="submit" class="submit-btn">Maak factuur</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+
+    <div id="subscriptionModal" class="invoice-modal">
+  <div class="invoice-modal-content">
+    <span id="closeSubscriptionModal" class="close-btn">&times;</span>
+    <h2>Nieuw Abonnement Aanmaken</h2>
+
+    <form id="subscriptionCreateForm">
+
+    
+
+      <label for="statusSub">Status:</label>
+      <select id="statusSub">
+        <option value="active">Actief</option>
+        <option value="inactive">Inactief</option>
+      </select>
+
+      <label for="priceSub">Prijs:</label>
+      <input type="number" step="0.01" id="priceSub">
+
+      <label for="dueTime">Vervaldatum / Tijd:</label>
+      <input type="text" id="dueTime" placeholder="Bijv. 30 dagen">
+
+      <label for="subscriptionSelect">Abonnementen:</label>
+      <div class="product-dropdown">
+        <div id="subscriptionSelect" class="product-select">Selecteer een abonnement</div>
+        <ul id="subscriptionList" class="product-list"></ul>
+      </div>
+
+
+      <input type="hidden" id="selectedSubscription">
+
+      <label id="successSub">Succes:</label>
+
+      <button id="subscriptionSubmit" class="invoice-submit-btn">Abonnement Aanmaken</button>
+    </form>
+  </div>
+</div>
+
+    <!-- BUTTON TO OPEN MODAL -->
+    <button id="openInvoiceModalBtn" class="OpenButton">Nieuwe Factuur</button>
+
+    <!-- FACTUREN OVERVIEW -->
+ <section class="invoice-container">
+  <div class="invoice">
+    
+    <!-- ============================== -->
+    <!-- Attached Toggle Buttons on Top -->
+    <!-- ============================== -->
+    <h1>Facturen</h1>
+
+    <div class="invoice-toggle-buttons">
+      <button id="facturenBtn" class="toggle-btn active">Facturen</button>
+      <button id="abonnementenBtn" class="toggle-btn">Abonnementen</button>
+    </div>
+
+
+    <table class="invoice-table" id="columns">
+      <thead>
+        <tr>
+          <th>Factuurnummer</th>
+          <th>Datum</th>
+          <th>Vervaldatum</th>
+          <th>Totaal</th>
+          <th>Status</th>
+          <th>Actie</th>
+          <th>Verzonden</th> 
+
+          <th>verwijder</th> 
+
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+
+</section>
+
+<div class="table-navigation">
+  <button class="arrow-btn" id="scrollLeft">&#8592;</button>
+  <p id="currentPage">1</p>
+  <button class="arrow-btn" id="scrollRight">&#8594;</button>
+</div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Factuurnet. Alle rechten voorbehouden.</p>
+  </footer>
+<div id="notification-container"></div>
+
+  <!-- JS FILE -->
+  <script src="./JS/userprofile.js"></script>
+  <script src="./JS/notification.js"></script>
+  <script src="./JS/Toggler.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debiteur Registratie</title>
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/invoicing.css"> 
+    <link rel="stylesheet" href="./css/notification.css" />
+
+</head>
+<body>
+
+   <header>
+    <div href="/" class="logo">Factuurnet</div>
+    <nav>
+      <a href="/products">Product Beheer</a>
+      <a href="/dashboard"> Alle debiteuren </a>
+      <a href="/invoiceselect">Home</a>
+      <a href="/settings">instellingen</a>
+    </nav>
+  </header>
+
+  <div class="invoice-container">
+    <div class="invoice">
+      <h1>Nieuwe Gebruiker Aanmaken</h1>
+
+      <form id="userForm">
+        <div class="invoice-details">
+          <div>
+            <label for="username">Gebruikersnaam</label><br>
+            <input type="text" id="username" name="username" placeholder="Voer gebruikersnaam in" style="width:100%;padding:0.5rem;margin-top:0.3rem;margin-bottom:1rem;border:1px solid #ddd;border-radius:5px;">
+            
+            <label for="email">E-mail</label><br>
+            <input type="email" id="email" name="email" placeholder="Voer e-mail in" style="width:100%;padding:0.5rem;margin-top:0.3rem;margin-bottom:1rem;border:1px solid #ddd;border-radius:5px;">
+          </div>
+
+          <div>
+            <label for="password">Wachtwoord</label><br>
+            <input type="password" id="password" name="password" placeholder="Voer wachtwoord in" style="width:100%;padding:0.5rem;margin-top:0.3rem;margin-bottom:1rem;border:1px solid #ddd;border-radius:5px;">
+
+          </div>
+        </div>
+
+        <div style="text-align:center;">
+          <button type="submit" class="download-btn">Geruiker Aanmaken</button>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+<table class="invoice-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Gebruikersnaam</th>
+      <th>E-mail</th>
+      <th>Verwijder</th>
+      <th>nieuw wachtwoord</th>
+      <th>actie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>admin</td>
+      <td>admin@factuurnet.nl</td>
+      <td>Hoog</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>janedoe</td>
+      <td>jane@factuurnet.nl</td>
+      <td>Gemiddeld</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>user123</td>
+      <td>user123@factuurnet.nl</td>
+      <td>Laag</td>
+    </tr>
+  </tbody>
+</table>
+<div id="notification-container"></div>
+
+  <footer>
+    &copy; 2025 Factuurnet. Alle rechten voorbehouden.
+  </footer>
+
+<script src="./JS/createUser.js"></script>
+  <script src="./JS/notification.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,480 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Poppins", sans-serif;
+  background: #f5f7fa; /* neutral soft background */
+  color: #1c2533;       /* darker slate text */
+  line-height: 1.8;
+  font-size: 17px;
+  letter-spacing: 0.5px; /* slightly wider */
+}
+
+/* =========================
+   HEADER & NAV
+========================= */
+header {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #cfd8e3;
+}
+
+header .logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1e3a8a; /* deep professional blue */
+}
+
+nav a {
+  color: #475569;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius, 12px);
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+  background: #1e3a8a;
+}
+
+/* =========================
+   INVOICE CONTAINER
+========================= */
+.invoice-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.invoice {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: var(--radius, 12px);
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #cfd8e3;
+}
+
+.invoice h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1c2533;
+  font-size: 1.8rem;
+}
+
+/* =========================
+   POPUP
+========================= */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(28, 37, 51, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: var(--radius, 12px);
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid #cfd8e3;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #1c2533;
+}
+
+.popup-content input,
+.popup-content select,
+.popup-content textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0 1rem 0;
+  border: 1px solid #cfd8e3;
+  border-radius: var(--radius, 12px);
+  font-size: 1rem;
+  color: #1c2533;
+  background: #f5f7fa;
+  transition: 0.2s ease;
+}
+
+.popup-content input:focus,
+.popup-content select:focus,
+.popup-content textarea:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  background: #ffffff;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.download-btn,
+.delete-btn {
+  display: inline-block;
+  border-radius: var(--radius, 12px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+}
+
+.download-btn {
+  background: #1e3a8a;
+  color: #ffffff;
+}
+
+.download-btn:hover {
+  background: #162f6f;
+}
+
+.invoice-table .delete-btn {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.invoice-table .delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* =========================
+   TABLE
+========================= */
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse; /* connected rows */
+  margin-bottom: 1.5rem;
+}
+
+.invoice-table th,
+.invoice-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #cfd8e3;
+  font-size: 1rem;
+}
+
+.invoice-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #475569;
+  background: #e2e8f0;
+}
+
+.invoice-table td:first-child,
+.invoice-table th:first-child {
+  width: 60px;
+  text-align: center;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* =========================
+   LINKS
+========================= */
+.link {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  color: #162f6f;
+}
+
+/* =========================
+   TABLE NAVIGATION
+========================= */
+.table-navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.arrow-btn {
+  background: #e2e8f0;
+  color: #1c2533;
+  border: 1px solid #cfd8e3;
+  border-radius: var(--radius, 12px);
+  font-size: 1.2rem;
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.arrow-btn:hover {
+  background: #1e3a8a;
+  color: #ffffff;
+}
+
+.arrow-btn:disabled {
+  background-color: #cfd8e3;
+  cursor: default;
+}
+ 
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 700px) {
+  .popup-content {
+    margin: 20% auto;
+  }
+}
+/* =========================
+   INVOICE CONTAINER & CARD
+========================= */
+.invoice-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.invoice {
+  background: #ffffff;
+  padding: 2.5rem 3rem; /* a bit more padding for breathing space */
+  border-radius: var(--radius, 12px);
+  width: 95%;            /* bigger width */
+  max-width: 1000px;     /* larger max width */
+  border: 1px solid #cfd8e3;
+}
+
+.invoice h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1c2533;
+  font-size: 2rem;      /* bigger main heading */
+}
+
+/* =========================
+   TABLE
+========================= */
+.invoice-table {
+  width: 100%;            /* table stretches full width of card */
+  border-collapse: collapse; /* connected rows */
+  margin-bottom: 2rem;
+  font-size: 1rem;        /* slightly larger text */
+}
+
+.invoice-table th,
+.invoice-table td {
+  padding: 1rem 1.2rem;   /* more padding for clarity */
+  text-align: left;
+  border-bottom: 1px solid #cfd8e3;
+}
+
+.invoice-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #475569;
+  background: #e2e8f0;
+}
+
+.link {
+  display: inline-block;
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 0.75rem 1.2rem;   /* makes it thicker */
+  border: 1px solid #1e3a8a;
+  border-radius: 12px;       /* matches your invoice style */
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  background: #162f6f;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+
+.invoice-table td:first-child,
+.invoice-table th:first-child {
+  width: 60px;
+  text-align: center;
+  font-weight: 600;
+  color: #475569;
+}
+/* =========================
+   STRUCTURED FORM LAYOUT
+========================= */
+
+/* Make popup wider for proper horizontal layout */
+.popup-content {
+  max-width: 1100px;   /* instead of 500px */
+  width: 95%;
+  position: relative;
+}
+
+/* Section spacing */
+.form-section {
+  margin-bottom: 2.5rem;
+}
+
+/* Section title */
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #1e3a8a;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+/* Horizontal row layout */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Make address slightly wider */
+.section-address .form-row {
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+/* Single column rows (like fax or restriction) */
+.section-contact .form-row:last-child,
+.section-settings .form-row {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove stacked spacing from earlier styling */
+.popup-content input,
+.popup-content select,
+.popup-content textarea {
+  margin: 0.4rem 0 0 0;
+}
+
+/* Submit section centered */
+.section-submit .form-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1000px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-address .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .section-submit .form-row {
+    justify-content: center;
+  }
+}
+/* =========================
+   POPUP SIZE & SCROLL FIX
+========================= */
+
+/* Smaller + centered popup */
+.popup-content {
+  max-width: 850px;       /* smaller than 1100 */
+  width: 92%;
+  max-height: 85vh;       /* prevents giant modal */
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem 2rem;
+}
+
+/* Make only the form scrollable */
+.structured-form {
+  overflow-y: auto;
+  padding-right: 10px; /* space for scrollbar */
+}
+
+/* Subtle modern scrollbar */
+.structured-form::-webkit-scrollbar {
+  width: 8px;
+}
+
+.structured-form::-webkit-scrollbar-thumb {
+  background: #cfd8e3;
+  border-radius: 10px;
+}
+
+.structured-form::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Slightly reduce spacing to make it more compact */
+.form-section {
+  margin-bottom: 1.8rem;
+}
+
+.section-title {
+  margin-bottom: 0.8rem;
+}
+
+.form-row {
+  gap: 1rem;
+}
+
+/* Slightly tighter inputs */
+.popup-content input,
+.popup-content select,
+.popup-content textarea {
+  padding: 0.6rem 0.9rem;
+}.delete-btn,
+.link {
+  display: flex !important;               /* flex to center content */
+  align-items: center !important;         /* vertical center */
+  justify-content: center !important;     /* horizontal center */
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: 0.2s ease !important;
+  border: none !important;
+  padding: 0.8rem 1.6rem !important;     /* padding inside button */
+  font-size: 1rem !important;
+  width: 150px !important;                /* same width for all */
+  height: 45px !important;                /* same height for all */
+  text-align: center !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;      /* include padding in height/width */
+}

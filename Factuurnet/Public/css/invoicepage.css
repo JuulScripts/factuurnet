@@ -1,0 +1,291 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fa;
+  color: #1c2533;
+  line-height: 1.8;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   HEADER & NAV
+========================= */
+header {
+  background: #ffffff;
+  color: #1c2533;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  border-bottom: 1px solid #cfd8e3;
+  box-shadow: none;
+}
+
+header .logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  cursor: pointer;
+}
+
+nav a {
+  color: #475569;
+  margin-left: 1.2rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffffff;
+  background: #1e3a8a;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+}
+
+/* =========================
+   INVOICE CONTAINER
+========================= */
+.invoice-container {
+  max-width: 950px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.invoice {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.invoice:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.invoice h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1c2533;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+/* =========================
+   INVOICE DETAILS
+========================= */
+.invoice-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.invoice-details div {
+  flex: 1;
+}
+
+.invoice-details div:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.invoice-details div h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #1c2533;
+}
+
+.invoice-details div p {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 0.25rem;
+}
+
+/* =========================
+   TABLE STYLING
+========================= */
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.invoice-table th,
+.invoice-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.invoice-table th {
+  background: #f3f4f6;
+  color: #1c2533;
+  font-weight: 600;
+}
+
+.invoice-table tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.invoice-table td {
+  color: #475569;
+}
+
+/* =========================
+   TOTALS
+========================= */
+.total-section {
+  text-align: right;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+}
+
+.total-section p {
+  margin: 0.4rem 0;
+}
+
+.total-section .grand-total {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1c2533;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.download-btn {
+  display: inline-block;
+  background: #1e3a8a;
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-right: 0.75rem;
+}
+
+.download-btn:hover {
+  background: #162f6f;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   STATUS SELECT
+========================= */
+#status {
+  margin-top: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid #cfd8e3;
+  font-size: 0.9rem;
+  background: #ffffff;
+  cursor: pointer;
+}
+ 
+
+.invoice-details p {
+  display: flex;
+  justify-content: flex-start;
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.invoice-details .label {
+  width: 150px; /* fixed width so labels align */
+  font-weight: bold;
+}
+
+.invoice-details .value {
+  flex: 1; /* take remaining space */
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .invoice-details {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* =========================
+   TABLE INPUT FIELDS
+========================= */
+.invoice-table input {
+  width: 100%;
+  border: 1px solid #cfd8e3;
+  background: #ffffff;
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  color: #1c2533;
+  outline: none;
+  transition: border 0.15s, box-shadow 0.15s;
+}
+
+.invoice-table input:focus {
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.15);
+}
+
+/* number input arrows smaller */
+.invoice-table input[type="number"] {
+  appearance: textfield;
+}
+
+/* optional: make cells tighter for inputs */
+.invoice-table td {
+  vertical-align: middle;
+}
+.invoice-table td {
+  vertical-align: middle;
+}
+
+.invoice-table input {
+  vertical-align: middle;
+}
+
+.invoice-table td span {
+  vertical-align: middle;
+}.invoice-table td input {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.invoice-table td {
+  white-space: nowrap;
+}
+
+.invoice-table td span {
+  display: inline-block;
+  vertical-align: middle;
+}

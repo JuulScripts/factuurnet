@@ -1,0 +1,140 @@
+DESCRIBE customers;
++----------------------------+--------------+------+-----+---------+----------------+
+| Field                      | Type         | Null | Key | Default | Extra          |
++----------------------------+--------------+------+-----+---------+----------------+
+| customer_id                | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name                       | text         | NO   |     | NULL    |                |
+| address                    | text         | YES  |     | NULL    |                |
+| email                      | text         | NO   |     | NULL    |                |
+| phonenumber                | text         | NO   |     | NULL    |                |
+| restriction_level          | int(11)      | YES  |     | NULL    |                |
+| notes                      | text         | YES  |     | NULL    |                |
+| company_name               | text         | YES  |     | NULL    |                |
+| chamber_of_commerce_number | text         | YES  |     | NULL    |                |
+| vat_number                 | text         | YES  |     | NULL    |                |
+| peppol_id                  | text         | YES  |     | NULL    |                |
+| contact_person             | text         | YES  |     | NULL    |                |
+| postal_code_city           | text         | YES  |     | NULL    |                |
+| country                    | text         | YES  |     | NULL    |                |
+| mobile_number              | text         | YES  |     | NULL    |                |
+| fax_number                 | text         | YES  |     | NULL    |                |
+| website                    | text         | YES  |     | NULL    |                |
+| lastname                   | text         | YES  |     | NULL    |                |
+| city                       | varchar(512) | YES  |     | NULL    |                |
++----------------------------+--------------+------+-----+---------+----------------+
+19 rows in set (0.010 sec)
+
+MariaDB [invoicewebsite]> DESCRIBE invoice_products;
++-----------------+------------------+------+-----+---------+----------------+
+| Field           | Type             | Null | Key | Default | Extra          |
++-----------------+------------------+------+-----+---------+----------------+
+| id              | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| invoice_id      | int(10) unsigned | NO   |     | NULL    |                |
+| subscription_id | int(10) unsigned | YES  |     | NULL    |                |
+| name            | varchar(255)     | NO   |     | NULL    |                |
+| price           | decimal(10,2)    | NO   |     | NULL    |                |
+| amount          | decimal(10,2)    | NO   |     | NULL    |                |
+| vat_percentage  | decimal(5,2)     | NO   |     | 21.00   |                |
+| date_created    | date             | YES  |     | NULL    |                |
++-----------------+------------------+------+-----+---------+----------------+
+8 rows in set (0.002 sec)
+
+MariaDB [invoicewebsite]> DESCRIBE invoices;
++-------------------+---------------+------+-----+---------+----------------+
+| Field             | Type          | Null | Key | Default | Extra          |
++-------------------+---------------+------+-----+---------+----------------+
+| id                | int(11)       | NO   | PRI | NULL    | auto_increment |
+| customer_id       | int(11)       | NO   | MUL | NULL    |                |
+| address           | text          | NO   |     | NULL    |                |
+| invoice_date      | date          | NO   |     | NULL    |                |
+| due_date          | date          | NO   |     | NULL    |                |
+| status            | varchar(100)  | NO   |     | NULL    |                |
+| subtotal          | decimal(10,2) | NO   |     | NULL    |                |
+| total             | decimal(10,2) | NO   |     | NULL    |                |
+| product           | text          | YES  |     | NULL    |                |
+| date              | date          | NO   |     | NULL    |                |
+| restriction_level | int(11)       | YES  |     | NULL    |                |
+| amount            | int(11)       | YES  |     | NULL    |                |
+| subscription_id   | int(11)       | YES  |     | NULL    |                |
+| vat               | int(11)       | YES  |     | NULL    |                |
+| price_per         | int(11)       | YES  |     | NULL    |                |
+| send_status       | tinyint(1)    | YES  |     | NULL    |                |
+| show_id           | int(11)       | YES  |     | NULL    |                |
+| end_date          | date          | YES  |     | NULL    |                |
+| ends_at           | date          | YES  |     | NULL    |                |
++-------------------+---------------+------+-----+---------+----------------+
+19 rows in set (0.002 sec)
+
+MariaDB [invoicewebsite]> DESCRIBE products;
++---------------------+---------------+------+-----+---------+----------------+
+| Field               | Type          | Null | Key | Default | Extra          |
++---------------------+---------------+------+-----+---------+----------------+
+| id                  | int(11)       | NO   | PRI | NULL    | auto_increment |
+| name                | text          | NO   |     | NULL    |                |
+| invoice_description | text          | YES  |     | NULL    |                |
+| unit                | varchar(20)   | YES  |     | NULL    |                |
+| price_excl_vat      | decimal(10,2) | NO   |     | NULL    |                |
+| vat_percentage      | decimal(5,2)  | YES  |     | NULL    |                |
+| price_per           | varchar(20)   | YES  |     | NULL    |                |
+| cost_type           | varchar(20)   | YES  |     | NULL    |                |
+| restriction_level   | int(11)       | YES  |     | NULL    |                |
++---------------------+---------------+------+-----+---------+----------------+
+9 rows in set (0.002 sec)
+
+MariaDB [invoicewebsite]> DESCRIBE sent_invoices;
++------------+------------------+------+-----+---------------------+----------------+
+| Field      | Type             | Null | Key | Default             | Extra          |
++------------+------------------+------+-----+---------------------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL                | auto_increment |
+| invoice_id | int(10) unsigned | NO   | UNI | NULL                |                |
+| created_at | timestamp        | NO   |     | current_timestamp() |                |
++------------+------------------+------+-----+---------------------+----------------+
+3 rows in set (0.002 sec)
+
+MariaDB [invoicewebsite]> DESCRIBE sessions;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | int(11)      | NO   | PRI | NULL    | auto_increment |
+| token         | varchar(255) | NO   | UNI | NULL    |                |
+| user_id       | int(11)      | NO   | MUL | NULL    |                |
+| user_username | varchar(255) | NO   |     | NULL    |                |
+| expires_at    | datetime     | NO   |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.004 sec)
+
+MariaDB [invoicewebsite]> DESCRIBE subscriptions;
++---------------------+---------------+------+-----+---------+----------------+
+| Field               | Type          | Null | Key | Default | Extra          |
++---------------------+---------------+------+-----+---------+----------------+
+| id                  | int(11)       | NO   | PRI | NULL    | auto_increment |
+| user_id             | int(11)       | NO   | MUL | NULL    |                |
+| name                | varchar(255)  | NO   |     | NULL    |                |
+| status              | varchar(50)   | NO   |     | active  |                |
+| price               | decimal(10,2) | YES  |     | NULL    |                |
+| subscription_length | varchar(255)  | YES  |     | NULL    |                |
+| periodes            | varchar(255)  | YES  |     | NULL    |                |
+| periode_type        | int(11)       | YES  |     | NULL    |                |
+| amount              | int(11)       | NO   |     | NULL    |                |
+| invoice_id          | int(11)       | YES  | UNI | NULL    |                |
+| vat                 | int(11)       | YES  |     | NULL    |                |
+| total               | decimal(10,2) | YES  |     | NULL    |                |
+| restriction_level   | int(11)       | YES  |     | NULL    |                |
+| adress              | varchar(500)  | YES  |     | NULL    |                |
+| ends_at             | date          | YES  |     | NULL    |                |
+| start_date          | date          | YES  |     | NULL    |                |
+| auto_send           | tinyint(1)    | NO   |     | 0       |                |
++---------------------+---------------+------+-----+---------+----------------+
+17 rows in set (0.003 sec)
+
+MariaDB [invoicewebsite]> DESCRIBE users;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| id                | int(11)      | NO   | PRI | NULL    | auto_increment |
+| username          | varchar(255) | NO   | UNI | NULL    |                |
+| password          | varchar(255) | NO   |     | NULL    |                |
+| restriction_level | int(11)      | NO   |     | NULL    |                |
+| email             | varchar(255) | NO   |     | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.020 sec)

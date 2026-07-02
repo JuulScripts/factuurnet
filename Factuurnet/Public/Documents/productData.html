@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <title>Product Beheer</title>
+    <link rel="stylesheet" href="./css/products.css" />
+  <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/notification.css" />
+
+
+</head>
+<body>
+
+   <header>
+    <div href="/" class="logo">Factuurnet</div>
+    <nav>
+      <a href="/products">Product Beheer</a>
+      <a href="/dashboard"> Alle debiteuren </a>
+      <a href="/invoiceselect">Home</a>
+      <a href="/settings">instellingen</a>
+    </nav>
+  </header>
+
+<main style="max-width: 1100px; margin: 40px auto;">
+
+    <h1 style="font-family: Arial; margin-bottom: 20px;">Productbeheer</h1>
+
+    <button id="openInvoiceModalBtn">Product Toevoegen</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Naam</th>
+                <th>Prijs</th>
+           
+                <th>Acties</th>
+            </tr>
+        </thead>
+        <tbody id="productTableBody"></tbody>
+    </table>
+
+</main>
+
+
+<!-- Modal: nieuw product -->
+<!-- Modal: nieuw product -->
+<div class="invoice-modal" id="invoiceModal">
+    <div class="invoice-modal-content">
+        <span class="invoice-modal-close" id="closeInvoiceModalBtn">&times;</span>
+
+        <h2>Nieuw Product</h2>
+
+        <form id="invoiceCreateForm">
+            <!-- Productnaam -->
+            <label for="naam">Naam</label>
+            <input id="naam" type="text" required />
+
+            <!-- Omschrijving op factuur -->
+            <label for="omschrijving">Omschrijving op factuur</label>
+            <input id="omschrijving" type="text" required />
+
+            <!-- Product eenheid -->
+            <label for="eenheid">Product eenheid (bijv. uur, liter, cm, m³, kg)</label>
+            <input id="eenheid" type="text" required />
+
+            <!-- Financieel -->
+            <label for="prijs">Prijs excl. BTW (€)</label>
+            <input id="prijs" type="number" step="0.01" required />
+
+            <label for="btw">BTW percentage</label>
+            <select id="btw" required>
+                <option value="21" selected>21%</option>
+                <option value="9">9%</option>
+                <option value="0">0%</option>
+            </select>
+                  
+            
+            <label for="prijsPer">Prijs per</label>
+            <select id="prijsPer" required>
+                <option value="eenmalig" selected>Eenmalig</option>
+                <option value="" disabled selected>Termein</option>
+                <option value="wekelijks">Wekelijks</option>
+                <option value="maandelijks">Maandelijks</option>
+                <option value="kwartaal">Per kwartaal</option>
+                <option value="halfjaarlijks">Halfjaarlijks</option>
+                <option value="jaarlijks">Jaarlijks</option>
+            </select>
+
+            <label for="kostprijs">Kostprijs excl. BTW (€)</label>
+            <input id="kostprijs" type="number" step="0.01" required />
+
+            <!-- Submit -->
+            <button id="save" class="invoice-submit-btn" type="submit">Opslaan</button>
+        </form>
+    </div>
+</div>
+<div id="notification-container"></div>
+
+
+
+</body>
+</html>
+  <script src="./JS/notification.js"></script>
+
+<script src="./JS/ProductPage.js"></script>

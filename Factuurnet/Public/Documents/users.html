@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alle Debiteuren | computerdoc</title>
+  <link rel="stylesheet" href="./css/userspage.css" />
+  <link rel="stylesheet" href="./css/notification.css" />
+  <link rel="stylesheet" href="./css/footer.css">
+
+</head>
+<body>
+   <header>
+    <div href="/" class="logo">Factuurnet</div>
+    <nav>
+      <a href="/products">Product Beheer</a>
+      <a href="/dashboard"> Alle debiteuren </a>
+      <a href="/invoiceselect">Home</a>
+      <a href="/settings">instellingen</a>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="invoice-container">
+      <div class="invoice">
+        <!-- Nieuwe Debiteur knop -->
+        <button id="createInvoiceBtn" class="download-btn">Nieuwe debiteur</button>
+
+        <!-- Popup Formulier -->
+   <div id="invoicePopup" class="popup" style="display: none;">
+  <div class="popup-content" >
+    <span id="closePopup" class="close">&times;</span>
+    <h2>Nieuwe debiteur</h2>
+
+    <form id="invoiceForm" class="horizontal-form structured-form">
+
+      <!-- ================= PERSONAL ================= -->
+      <div class="form-section section-personal">
+        <h3 class="section-title">Persoonlijke gegevens</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="userName">Naam:</label>
+            <input type="text" id="userName" name="userName" required />
+          </div>
+          <div class="form-group">
+            <label for="lastname">Achternaam:</label>
+            <input type="text" id="lastname" name="lastname" required />
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= COMPANY ================= -->
+      <div class="form-section section-company">
+        <h3 class="section-title">Bedrijfsgegevens</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="company_name">Bedrijfsnaam:</label>
+            <input type="text" id="company_name" name="company_name" />
+          </div>
+          <div class="form-group">
+            <label for="contact_person">Contactpersoon:</label>
+            <input type="text" id="contact_person" name="contact_person" />
+          </div>
+          <div class="form-group">
+            <label for="website">Website:</label>
+            <input type="text" id="website" name="website" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= ADDRESS ================= -->
+      <div class="form-section section-address">
+        <h3 class="section-title">Adresgegevens</h3>
+        <div class="form-row">
+          <div class="form-group" style="flex:2">
+            <label for="adress">Adres:</label>
+            <input type="text" id="adress" name="adress" required />
+          </div>
+         
+             <div class="form-group" style="flex:2">
+            <label for="city">Stad:</label>
+            <input type="text" id="city" name="city" required />
+          </div>
+
+          <div class="form-group">
+            <label for="postal_code_city">Postcode & Plaats:</label>
+            <input type="text" id="postal_code_city" name="postal_code_city" />
+          </div>
+          <div class="form-group">
+            <label for="country">Land:</label>
+            <input type="text" id="country" name="country" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= CONTACT ================= -->
+      <div class="form-section section-contact">
+        <h3 class="section-title">Contactgegevens</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="userEmail">E-mail:</label>
+            <input type="email" id="userEmail" name="userEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="userPhone">Telefoonnummer:</label>
+            <input type="text" id="userPhone" name="userPhone" required />
+          </div>
+          <div class="form-group">
+            <label for="mobile_number">Mobiel nummer:</label>
+            <input type="text" id="mobile_number" name="mobile_number" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fax_number">Faxnummer:</label>
+            <input type="text" id="fax_number" name="fax_number" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= REGISTRATION ================= -->
+      <div class="form-section section-registration">
+        <h3 class="section-title">Registratiegegevens</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="chamber_of_commerce_number">KVK-nummer:</label>
+            <input type="text" id="chamber_of_commerce_number" name="chamber_of_commerce_number" />
+          </div>
+          <div class="form-group">
+            <label for="vat_number">BTW-nummer:</label>
+            <input type="text" id="vat_number" name="vat_number" />
+          </div>
+          <div class="form-group">
+            <label for="peppol_id">PEPPOL ID:</label>
+            <input type="text" id="peppol_id" name="peppol_id" />
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ================= SUBMIT ================= -->
+      <div class="form-section section-submit">
+        <div class="form-row">
+          <button type="submit" class="download-btn">Versturen</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+        <h1>Alle debiteuren</h1>
+        <table class="invoice-table">
+          <thead>
+            <tr>
+              <th>Debiteur ID</th>
+              <th>Naam</th>
+              <th>E-mail</th>
+              <th>Actie</th>
+              <th>verwijder</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#001</td>
+              <td>John Doe</td>
+              <td>john@example.com</td>
+              <td><a href="user-invoices.html?user=1" class="link">Bekijk facturen</a></td>
+            </tr>
+            <tr>
+              <td>#002</td>
+              <td>Jane Smith</td>
+              <td>jane@example.com</td>
+              <td><a href="user-invoices.html?user=2" class="link">Bekijk facturen</a></td>
+            </tr>
+            <tr>
+              <td>#003</td>
+              <td>David Chen</td>
+              <td>david@example.com</td>
+              <td><a href="?user=3" class="link">Bekijk facturen</a></td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    </section>
+
+    <div class="table-navigation">
+      <button class="arrow-btn" id="scrollLeft">&#8592;</button>
+      <p id="currentPage">1</p>
+      <button class="arrow-btn" id="scrollRight">&#8594;</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Factuurnet. Alle rechten voorbehouden.</p>
+  </footer>
+<!-- Notification container -->
+<div id="notification-container"></div>
+
+  <script src="./JS/CreateInvoice.js"></script>
+  <script src="./JS/notification.js"></script>
+
+</body>
+</html>

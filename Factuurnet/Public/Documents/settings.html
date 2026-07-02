@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings Page</title>
+  <link rel="stylesheet" href="./css/settings.css" />
+  <link rel="stylesheet" href="./css/notification.css" />
+  <link rel="stylesheet" href="./css/footer.css">
+
+</head>
+<body>
+   <header>
+    <div href="/" class="logo">Factuurnet</div>
+    <nav>
+      <a href="/products">Product Beheer</a>
+      <a href="/dashboard"> Alle debiteuren </a>
+      <a href="/invoiceselect">Home</a>
+      <a href="/settings">instellingen</a>
+    </nav>
+  </header>
+
+  <div class="settings-wrapper">
+    <!-- Sidebar tabs -->
+    <aside class="sidebar">
+      <ul>
+        <li class="active" data-tab="account">Account</li>
+        <li class="" data-tab="general">Algemeen</li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="settings-content">
+         <section id="general" class="tab-content  ">
+        <h2>algemeen</h2>
+           <h2>Verstuur termein (dagen)</h2>
+           <input type="number" id="due-value">
+           <button id="update-date" class="save-btn"> Verstuur </button>
+        </section>
+      <section id="account" class="tab-content active">
+        <h2>Account</h2>
+        <label for="email">Account</label>
+
+        <button class="save-btn" id="log-out">Log uit</button>
+      </section>
+
+      <section id="preferences" class="tab-content">
+        <h2>Preferences</h2>
+      
+        <label>
+          <input type="checkbox" id="darkmode">
+          Enable dark mode
+        </label>
+        <button class="save-btn">Save Preferences</button>
+      </section>
+
+
+
+
+      <section id="security" class="tab-content">
+        <h2>veiligheid</h2>
+
+        <label for="2fa">2fa (twee factoor authenticatie)</label>
+        <input type="checkbox" id="2fa"> Enable 2FA
+
+        <button class="save-btn">Update Security</button>
+      </section>
+    </main>
+  </div>
+<div id="notification-container"></div>
+
+  <footer>
+    &copy; 2026 Factuurnet. All rights reserved.
+  </footer>
+
+  <script src="./JS/settings.js"></script>
+  <script src="./JS/notification.js"></script>
+
+</body>
+</html>

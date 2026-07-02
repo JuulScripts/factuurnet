@@ -1,0 +1,143 @@
+/* Fullscreen overlay */
+.invoice-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.invoice-modal-content {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 420px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  position: relative;
+  animation: fadeIn 0.25s ease-out;
+  font-family: Arial, sans-serif;
+}
+
+/* Close button */
+.invoice-modal-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #555;
+}
+.invoice-modal-close:hover {
+  color: #d33;
+}
+
+/* Form styles */
+#invoiceCreateForm label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#invoiceCreateForm input,
+#invoiceCreateForm textarea,
+#invoiceCreateForm select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Two-column date fields */
+.date-row {
+  display: flex;
+  gap: 10px;
+}
+
+.invoice-submit-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #2b7bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.invoice-submit-btn:hover {
+  background: #1f63d4;
+}
+
+/* Subtle animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#openInvoiceModalBtn {
+  background: #2b7bff;
+  color: #fff;
+  padding: 12px 22px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+#openInvoiceModalBtn:hover {
+  background: #1f63d4;
+  transform: translateY(-2px);
+}
+
+#openInvoiceModalBtn:active {
+  background: #1850ab;
+  transform: translateY(0);
+}
+.product-dropdown {
+  position: relative;
+  width: 200px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.product-select {
+  border: 1px solid #ccc;
+  padding: 8px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.product-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-top: none;
+  background: #fff;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 10;
+  border-radius: 0 0 4px 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-list li {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.product-list li:hover {
+  background-color: #f0f0f0;
+}

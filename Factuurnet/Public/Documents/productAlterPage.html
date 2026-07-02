@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/invoicing.css" />
+  <link rel="stylesheet" href="./css/footer.css">
+
+    <title>Product Details</title>
+</head>
+
+
+<body>
+
+    <h1>Product Details</h1>
+
+    <a href="product-beheer.html">← Terug naar Product Beheer</a>
+
+    <div id="productInfo" style="margin-top: 20px;"></div>
+
+ <header>
+    <div href="/" class="logo">Factuurnet</div>
+    <nav>
+      <a href="/products">Product Beheer</a>
+      <a href="/dashboard"> Alle debiteuren </a>
+      <a href="/invoiceselect">Home</a>
+      <a href="/makeuser">Gebruikers instellingen</a>
+    </nav>
+  </header>
+
+    <script>
+        // Lees ID uit URL
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        // Simulatie opslag via localStorage
+        let products = JSON.parse(localStorage.getItem("producten") || "[]");
+
+        const product = products.find(p => p.id == id);
+
+        const container = document.getElementById("productInfo");
+
+        if (!product) {
+            container.innerHTML = "<p>Product niet gevonden.</p>";
+        } else {
+            container.innerHTML = `
+                <h2>${product.naam}</h2>
+
+                <label>Naam</label><br>
+                <input id="naam" value="${product.naam}"><br><br>
+
+                <label>Prijs (€)</label><br>
+                <input id="prijs" type="number" step="0.01" value="${product.prijs}"><br><br>
+
+                <label>Voorraad</label><br>
+                <input id="voorraad" type="number" value="${product.voorraad}"><br><br>
+
+                <button onclick="saveChanges()">Wijzigingen Opslaan</button>
+            `;
+        }
+
+        function saveChanges() {
+            product.naam = document.getElementById("naam").value;
+            product.prijs = document.getElementById("prijs").value;
+            product.voorraad = document.getElementById("voorraad").value;
+
+            localStorage.setItem("producten", JSON.stringify(products));
+            alert("Gewijzigd opgeslagen!");
+        }
+    </script>
+
+</body>
+</html>

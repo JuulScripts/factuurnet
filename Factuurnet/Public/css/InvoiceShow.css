@@ -1,0 +1,300 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fa; /* neutral soft background */
+  color: #1c2533;       /* dark professional text */
+  line-height: 1.8;
+  font-size: 17px;       /* slightly bigger */
+  letter-spacing: 0.5px; /* wider text for readability */
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: var(--radius, 12px);
+  border-bottom: 1px solid #cfd8e3;
+}
+
+header .logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1e3a8a; /* professional navy blue */
+}
+
+nav a {
+  color: #475569; /* slate gray */
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius, 12px);
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+  background: #1e3a8a;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+.main-container {
+  max-width: 1400px; /* wider container */
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+}
+
+/* Header + Filter */
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.invoice-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1c2533;
+}
+
+.filter-btn {
+  background: #1e3a8a;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius, 12px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #162f6f;
+}
+
+/* =========================
+   TABLE CONTAINER
+========================= */
+.invoice-table-container {
+  background: #ffffff;
+  border-radius: var(--radius, 12px);
+  border: 1px solid #cfd8e3;
+  padding: 2rem;
+  width: 120%;         /* full width of main container */
+  overflow-x: auto;    /* horizontal scroll if needed */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   TABLE
+========================= */
+.invoice-table {
+  width: 100%;            /* full width of container */
+  border-collapse: collapse; /* connected rows */
+  font-size: 1rem;        /* bigger text */
+}
+
+.invoice-table th,
+.invoice-table td {
+  padding: 1rem 1.2rem;    /* more padding */
+  text-align: left;
+  border-bottom: 1px solid #cfd8e3;
+}
+
+.invoice-table th {
+  background: #e2e8f0;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+.invoice-table td:first-child,
+.invoice-table th:first-child {
+  width: 60px;
+  text-align: center;
+  font-weight: 600;
+  color: #475569;
+}
+
+.invoice-table tr:hover td {
+  background: #f0f4fa; /* subtle hover */
+}
+
+/* =========================
+   CONCEPT & STATUS BADGES
+========================= */
+.concept {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius, 12px);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #6b7280; /* slate gray */
+  text-align: center;
+}
+
+.status-open {
+  color: #e67e22;
+  font-weight: 700;
+}
+
+.status-closed {
+  color: #27ae60;
+  font-weight: 700;
+}
+
+/* =========================
+   TABLE BUTTONS
+========================= */
+.invoice-table .delete-btn,
+.invoice-table button {
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: var(--radius, 12px);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.invoice-table .delete-btn:hover,
+.invoice-table button:hover {
+  background: #b91c1c;
+}
+
+/* View button override */
+.view-btn {
+  background-color: #162f6f !important;
+  color: #ffffff !important;
+  padding: 0.6rem 1.5rem !important;
+  border-radius: var(--radius, 12px);
+  font-weight: 600;
+  font-size: 1rem !important;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: #ffffff;
+  min-width: 180px;
+  border-radius: var(--radius, 12px);
+  overflow: hidden;
+  border: 1px solid #cfd8e3;
+  z-index: 100;
+}
+
+.dropdown-content button {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  color: #1c2533;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.dropdown-content button:hover {
+  background: #f0f4fa;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+/* =========================
+   TABLE NAVIGATION
+========================= */
+.table-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.arrow-btn {
+  background: #1e3a8a;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius, 12px);
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.arrow-btn:hover {
+  background: #162f6f;
+}
+
+.arrow-btn:disabled {
+  background: #aaa;
+  cursor: default;
+}
+
+ 
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .invoice-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-btn {
+    margin-top: 1rem;
+  }
+
+  .invoice-table th,
+  .invoice-table td {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-container {
+    padding: 1rem;
+  }
+
+  .invoice-table th,
+  .invoice-table td {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .filter-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

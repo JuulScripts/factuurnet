@@ -1,0 +1,213 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f6f8fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #111827;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+nav a {
+  color: #ccc;
+  margin-left: 1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.query-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300%;
+  max-width: 1800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.query-box h1, .query-box h2 {
+  color: #222;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-section input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Options */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.encrypt-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.encrypt-toggle input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+button#runQueryBtn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button#runQueryBtn:hover {
+  background: #1d4ed8;
+}
+
+/* Response Section */
+.response-section {
+  margin-bottom: 1.5rem;
+}
+
+#queryResponse {
+  background: #f3f4f6;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: monospace;
+  min-height: 60px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#queryResults {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  min-width: 600px;
+}
+
+#queryResults th,
+#queryResults td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+  max-width: 300px;            /* optional, for readability */
+  white-space: pre-wrap;       /* keeps short text inline but wraps long text */
+  word-break: break-word;      /* breaks long words when necessary */
+  overflow-wrap: break-word;   /* ensures long strings wrap */
+}
+
+
+/* Allow long content to wrap while preventing tiny columns */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* horizontal scroll if content is too wide */
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto; /* let columns auto-size */
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+  white-space: normal;       /* allows wrapping */
+  word-break: break-word;    /* breaks long words when necessary */
+  max-width: 350px;          /* optional: prevents huge cells */
+}
+
+.invoice-table td {
+  vertical-align: top;       /* keeps multiple-line content nicely aligned */
+}
+
+
+#queryResults th {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+/* Total Section */
+.total-section {
+  text-align: right;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.total-section p {
+  margin: 0.3rem 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
